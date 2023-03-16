@@ -4,3 +4,9 @@ body.menu-open {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+@font-face {
+  font-family: 'GRIFTER';
+  src: local('grifterbold'), url(./assets/fonts/grifterbold.otf) format('OpenType');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}

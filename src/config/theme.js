@@ -1,4 +1,6 @@
 import { createTheme, responsiveFontSizes } from '@material-ui/core/styles';
+import "../assets/fonts/grifterbold.otf";
+
 
 const theme = createTheme({
   palette: {
@@ -16,7 +18,8 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: ['Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'].join(','),
+    fontFamily: ['GRIFTER', 'sans-serif'].join(','),
+    // fontFamily: 'grifterbold';
     fontSize: 16,
   },
   overrides: {
