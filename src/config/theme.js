@@ -17,10 +17,16 @@ const theme = createTheme({
       yellow: '#F2B844',
     },
   },
+  size: {
+    button: {
+      height: '60px'
+    }
+  },
   typography: {
     fontFamily: ['GRIFTER', 'sans-serif'].join(','),
     // fontFamily: 'grifterbold';
     fontSize: 16,
+    letterSpacing: '1px'
   },
   overrides: {
     MuiButton: {

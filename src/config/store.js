@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../components/Counter/slice';
+import bridgeReducer from '../redux/bridge';
 
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    bridge: bridgeReducer,
   },
 });

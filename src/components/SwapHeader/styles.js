@@ -1,16 +1,18 @@
 import styled from 'styled-components';
-import { Typography, IconButton } from '@material-ui/core';
+import { Typography, IconButton, Container } from '@material-ui/core';
 
-export const HeaderEl = styled.div`
+export const Wrapper = styled(Container)`
   width: 100%;
   height: 90px;
+  align-items: center;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   background-color: #444647;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   margin-top: 31px;
+  padding-left: 0;
+  padding-right: 0;
 `;
 
 export const Title = styled(Typography)`
