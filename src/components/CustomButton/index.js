@@ -5,7 +5,7 @@ import { ButtonWrapper } from "./styles";
 import { ReactComponent as SwapSvg } from '../../assets/images/swap.svg';
 import { ReactComponent as CardTickSvg } from '../../assets/images/card-tick.svg';
 
-function BridgeButton(props) {
+function CustomButton(props) {
   const {
     isSwap,
     handleAction,
@@ -25,4 +25,4 @@ function BridgeButton(props) {
   )
 }
 
-export default BridgeButton;
+export default CustomButton;

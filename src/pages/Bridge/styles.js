@@ -22,5 +22,9 @@ export const Wrapper = styled(Container)`
         margin 0 24px;
       }
     }
+
+    .amount-group {
+      margin-top: 50px;
+    }
   }
 `;

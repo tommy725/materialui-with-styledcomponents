@@ -17,11 +17,29 @@ export const FormControlWrapper = styled(FormControl)`
     .MuiInput-input {
       height: ${({ theme }) => theme.size.button.height};
       line-height: ${({ theme }) => theme.size.button.height};
-      color: white;
-      font-size: 20px;
-      margin-left: 20px;
-      padding: 0;
+      align-items: center;
+      display: flex;
+      padding: 0 20px;
       text-align: left;
+
+      img {
+        width: 20px;
+        height: 20px;
+        display: initial !important;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+
+      p {
+        color: white;
+        display: inline;
+        font-size: 20px;
+        padding-top: 2px
+      }
     }
+  }
+
+  .no-border {
+    border: none;
   }
 `;

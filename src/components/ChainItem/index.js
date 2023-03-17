@@ -1,6 +1,9 @@
 import React, {useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Box, Image } from "@material-ui/core";
+
 import { Wrapper } from "./styles";
+
 import CoinSelect from "../CoinSelect"
 
 import {
@@ -17,11 +20,11 @@ function ChainItem(props) {
 
   return (
     <Wrapper>
-      <div className="image-container">
+      <Box className="image-container">
         <img src={coinList[coinIdx].image} alt=""/>
-      </div>
+      </Box>
 
-      <CoinSelect coinIdx = {coinIdx} handleChangeCoin = {handleChangeCoin} marginTop = {'48px'}/>
+      <CoinSelect coinIdx={coinIdx} handleChangeCoin={handleChangeCoin} marginTop={'48px'} noIcon={ true }/>
     </Wrapper>    
   )
 }

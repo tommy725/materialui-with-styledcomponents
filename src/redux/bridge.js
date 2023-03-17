@@ -8,6 +8,8 @@ export const bridgeSlice = createSlice({
     startCoinIdx: 0,
     destCoinIdx: 0,
     amount: 0,
+    receivedAmount: 0,
+    exchangeNotice: "1 ETH = 1,270.76787 MATIC",
     coinList: [
       {id: 1, name: 'Ethereum', image: EthereumSvg},
       {id: 2, name: 'Bitcoin', image: EthereumSvg},
@@ -33,10 +35,17 @@ export const bridgeSlice = createSlice({
     changeDest: (state, action) => {
       state.destCoinIdx = action.payload;
     },
+
+    changeAmount: (state, action) => {
+      state.amount = action.payload;
+
+      // Calculate received amount.
+      state.receivedAmount = state.amount + 5;
+    },
   },
 });
 
-export const { swap, changeStart, changeDest } = bridgeSlice.actions;
+export const { swap, changeStart, changeDest, changeAmount } = bridgeSlice.actions;
 
 // The function below is called a thunk and allows us to perform async logic. It
 // can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This
@@ -54,5 +63,8 @@ export const swapAsync = () => (dispatch) => {
 export const selectStartCoinIdx = (state) => state.bridge.startCoinIdx;
 export const selectDestCoinIdx = (state) => state.bridge.destCoinIdx;
 export const selectCoinList = (state) => state.bridge.coinList;
+export const selectAmount = (state) => state.bridge.amount;
+export const selectReceivedAmount = (state) => state.bridge.receivedAmount;
+export const selectExchangeNotice = (state) => state.bridge.exchangeNotice;
 
 export default bridgeSlice.reducer;

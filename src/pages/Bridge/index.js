@@ -1,27 +1,34 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Box, Stack } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 
 import { Wrapper } from './styles';
 
 import SwapHeader from '../../components/SwapHeader';
 import ChainItem from '../../components/ChainItem';
-import BridgeButton from '../../components/CustomButton';
+import CustomButton from '../../components/CustomButton';
+import InputAmount from '../../components/InputAmount';
 
 import {
   swap,
   changeStart,
   changeDest,
+  changeAmount,
   swapAsync,
   selectStartCoinIdx,
   selectDestCoinIdx,
+  selectAmount,
+  selectReceivedAmount,
+  selectExchangeNotice,
 } from '../../redux/bridge';
-import { SpaceBar } from '@mui/icons-material';
 
 function Bridge() {
   const startCoinIdx = useSelector(selectStartCoinIdx);
   const destCoinIdx = useSelector(selectDestCoinIdx);
+  const amount = useSelector(selectAmount);
+  const receivedAmount = useSelector(selectReceivedAmount);
+  const exchangeNotice = useSelector(selectExchangeNotice);
   const dispatch = useDispatch();
   
   const handleChangeStart = (event) => {
@@ -39,6 +46,11 @@ function Bridge() {
     dispatch(swap())
   };
 
+  const handleChangeAmount = (event) => {
+    // useDispatch
+    dispatch(changeAmount(Number(event.target.value) || 0))
+  };
+
   const handleApprove = (event) => {
     // useDispatch
     // dispatch(approve())
@@ -48,12 +60,19 @@ function Bridge() {
     <Wrapper>
       <SwapHeader />
       <Box className="body">
+        
         <Box className="coin-type">
           <ChainItem coinIdx={ startCoinIdx } handleChangeCoin={ handleChangeStart }/>
-          <BridgeButton isSwap={ true } handleAction={ handleSwap } />
+          <CustomButton isSwap={ true } handleAction={ handleSwap } />
           <ChainItem coinIdx={destCoinIdx} handleChangeCoin={ handleChangeDest }/>
         </Box>
-        <BridgeButton isSwap={false} />
+        
+        <Box className="amount-group">
+          <InputAmount title={ "Enter Amount" } amount={ amount } coinIdx={ startCoinIdx } handleChangeCoin={ handleChangeStart } handleChangeAmount={ handleChangeAmount } />
+          <InputAmount title={ "Received" } amount={ receivedAmount } exchangeNotice={ exchangeNotice } coinIdx={ destCoinIdx } handleChangeCoin={ handleChangeDest } readOnly={ true } />
+        </Box>
+
+        <CustomButton isSwap={false} />
       </Box>
     </Wrapper>
   );
