@@ -9,6 +9,7 @@ import SwapHeader from '../../components/SwapHeader';
 import ChainItem from '../../components/ChainItem';
 import CustomButton from '../../components/CustomButton';
 import InputAmount from '../../components/InputAmount';
+import OtherRoutes from '../../components/OtherRoutes';
 
 import {
   swap,
@@ -72,7 +73,11 @@ function Bridge() {
           <InputAmount title={ "Received" } amount={ receivedAmount } exchangeNotice={ exchangeNotice } coinIdx={ destCoinIdx } handleChangeCoin={ handleChangeDest } readOnly={ true } />
         </Box>
 
-        <CustomButton isSwap={false} />
+        <Box className="other-routes">
+          <OtherRoutes/>
+        </Box>
+
+        <CustomButton />
       </Box>
     </Wrapper>
   );

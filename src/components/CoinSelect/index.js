@@ -1,13 +1,12 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Select, MenuItem, Box, Typography} from "@material-ui/core"
+import { FormControl, Select, MenuItem, Box, Typography} from "@material-ui/core"
 
-import { FormControlWrapper } from './styles'
+import { Wrapper } from './styles'
 
 function CoinSelect(props) {
   const {
     coinIdx,
-    marginTop,
     handleChangeCoin,
     noBorder,
     noIcon
@@ -16,8 +15,8 @@ function CoinSelect(props) {
   const coinList = useSelector(state => state.bridge.coinList);
 
   return (
-    <Box sx={{marginTop: marginTop}}>
-      <FormControlWrapper>
+    <Wrapper>
+      <FormControl>
         <Select className={ noBorder ? "no-border": "" }
           value={coinIdx}
           onChange={handleChangeCoin}
@@ -30,8 +29,8 @@ function CoinSelect(props) {
           ))
         }
         </Select>
-      </FormControlWrapper>
-    </Box>
+      </FormControl>
+    </Wrapper>
   )
 } 
 

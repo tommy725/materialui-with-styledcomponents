@@ -12,10 +12,16 @@ export const ButtonWrapper = styled(Box)`
     font-size: 20px;
     margin: 0;
     text-align: center;    
+    text-transform: initial;
   }
 
   .MuiButton-root.swap {
     min-width: 60px;
+  }
+
+  .MuiButton-startIcon { 
+    margin-left: 6px;
+    margin-right: 17.67px;
   }
 
   .swap .MuiButton-startIcon { 

@@ -24,7 +24,10 @@ function ChainItem(props) {
         <img src={coinList[coinIdx].image} alt=""/>
       </Box>
 
-      <CoinSelect coinIdx={coinIdx} handleChangeCoin={handleChangeCoin} marginTop={'48px'} noIcon={ true }/>
+      <Box sx={{marginTop: "48px"}}>
+        <CoinSelect coinIdx={coinIdx} handleChangeCoin={handleChangeCoin} noIcon={ true }/>
+      </Box>
+      
     </Wrapper>    
   )
 }

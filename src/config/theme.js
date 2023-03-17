@@ -26,7 +26,8 @@ const theme = createTheme({
     fontFamily: ['GRIFTER', 'sans-serif'].join(','),
     // fontFamily: 'grifterbold';
     fontSize: 16,
-    letterSpacing: '1px'
+    // letterSpacing: '1'
+    letterSpacing: "-0.05rem"
   },
   overrides: {
     MuiButton: {

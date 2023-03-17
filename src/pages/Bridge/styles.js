@@ -26,5 +26,9 @@ export const Wrapper = styled(Container)`
     .amount-group {
       margin-top: 50px;
     }
+
+    .other-routes {
+      margin-top: 34px;
+    }
   }
 `;
