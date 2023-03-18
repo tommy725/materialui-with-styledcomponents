@@ -2,8 +2,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Box } from '@material-ui/core';
-
-import { Wrapper } from './styles';
+import { Wrapper, CurvedLine } from './styles';
 
 import SwapHeader from '../../components/SwapHeader';
 import ChainItem from '../../components/ChainItem';

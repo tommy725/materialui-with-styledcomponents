@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Box, Image } from "@material-ui/core";
 
-import { Wrapper } from "./styles";
+import { Wrapper, RippleAnimView } from "./styles";
 
 import CoinSelect from "../CoinSelect"
 
@@ -21,7 +21,12 @@ function ChainItem(props) {
   return (
     <Wrapper>
       <Box className="image-container">
-        <img src={coinList[coinIdx].image} alt=""/>
+        <RippleAnimView className="ripple"></RippleAnimView>
+        <RippleAnimView className="ripple"></RippleAnimView>
+        <RippleAnimView className="ripple"></RippleAnimView>
+        <Box>
+          <img src={coinList[coinIdx].image} alt=""/>
+        </Box>
       </Box>
 
       <Box sx={{marginTop: "48px"}}>
