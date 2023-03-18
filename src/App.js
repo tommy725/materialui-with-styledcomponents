@@ -6,7 +6,7 @@ import Loading from './components/Loading';
 
 const Bridge = lazy(() => import('./pages/Bridge'));
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Suspense fallback={<Loading />}>

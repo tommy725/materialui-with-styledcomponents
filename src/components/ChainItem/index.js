@@ -10,7 +10,7 @@ import {
   selectCoinList
 } from '../../redux/bridge';
 
-function ChainItem(props) {
+const ChainItem = (props) => {
   const {
     coinIdx,
     handleChangeCoin

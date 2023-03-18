@@ -24,7 +24,7 @@ import {
   selectExchangeNotice,
 } from '../../redux/bridge';
 
-function Bridge() {
+const Bridge = () => {
   const startCoinIdx = useSelector(selectStartCoinIdx);
   const destCoinIdx = useSelector(selectDestCoinIdx);
   const amount = useSelector(selectAmount);
@@ -76,7 +76,7 @@ function Bridge() {
         </Box>
 
         <Box className="other-routes">
-          <OtherRoutes/>
+          <OtherRoutes />
         </Box>
 
         <CustomButton />

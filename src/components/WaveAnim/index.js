@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Wrapper } from './styles';
 
-function WaveAnim() {
+const WaveAnim = () => {
   return (
     <Wrapper>
       <svg className="finny scroll fade scrolled" viewBox="0 0 800 350">

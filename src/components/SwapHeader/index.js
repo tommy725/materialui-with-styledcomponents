@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Wrapper, Title, SettingButton } from './styles';
 import SettingSvg  from '../../assets/images/setting.svg'
 
-function Header() {
+const Header = () => {
     return (
       <Wrapper>
         <Title>

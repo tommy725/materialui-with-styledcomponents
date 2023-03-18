@@ -21,10 +21,6 @@ export const Wrapper = styled(Container)`
       display: flex;
       position: relative;
 
-      .swap-btn {
-        margin 0 24px;
-      }
-
       .wave-anim {
         position: absolute;
         left: 30%;

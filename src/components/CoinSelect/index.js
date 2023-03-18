@@ -4,7 +4,7 @@ import { FormControl, Select, MenuItem, Box, Typography} from "@material-ui/core
 
 import { Wrapper } from './styles'
 
-function CoinSelect(props) {
+const CoinSelect = (props) => {
   const {
     coinIdx,
     handleChangeCoin,

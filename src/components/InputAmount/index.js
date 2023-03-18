@@ -2,11 +2,11 @@ import React, {useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Box, Typography, Input } from "@material-ui/core";
 
-import { Wrapper } from "./styles";
+import { Wrapper } from "./styles.module";
 
 import CoinSelect from "../CoinSelect";
 
-function InputAmount(props) {
+const InputAmount = (props) => {
   const {
     title,
     amount,

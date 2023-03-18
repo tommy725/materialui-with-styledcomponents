@@ -8,7 +8,7 @@ const Wrapper = styled(Container)`
   justify-content: center;
 `;
 
-function Loading() {
+const Loading = () => {
   return (
     <Wrapper>
       <CircularProgress />

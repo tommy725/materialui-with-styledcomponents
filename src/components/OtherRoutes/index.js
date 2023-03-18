@@ -10,7 +10,7 @@ import { Wrapper } from "./styles";
 
 import RouteItem from "./RouteItem";
 
-function OtherRoutes() {
+const OtherRoutes = () => {
   return (
     <Wrapper>
       <Button className="title">

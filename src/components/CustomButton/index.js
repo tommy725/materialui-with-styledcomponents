@@ -5,7 +5,7 @@ import { ButtonWrapper } from "./styles";
 import { ReactComponent as SwapSvg } from '../../assets/images/swap.svg';
 import { ReactComponent as CardTickSvg } from '../../assets/images/card-tick.svg';
 
-function CustomButton(props) {
+const CustomButton = (props) => {
   const {
     isSwap,
     handleAction,

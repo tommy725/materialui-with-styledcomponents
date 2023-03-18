@@ -3,7 +3,7 @@ import { Typography } from "@material-ui/core";
 
 import { Wrapper, Image } from "./styles";
 
-function RouteItem(props) {
+const RouteItem = (props) => {
   const {
     image,
     title,
