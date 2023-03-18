@@ -16,13 +16,14 @@ export const Wrapper = styled(Container)`
     line-height: normal;
     margin-top: 40px;
     position: relative;
-
+    
     .MuiBox-root {
       width: 100%;
       height: 100%;
       align-items: center;
       background-color: white;
-      box-shadow: rgba(51, 255, 0, 0.05) 0px 6px 24px 0px, rgba(51, 255, 0, 1) 0px 0px 0px 1px;
+      box-shadow: rgba(51, 255, 0, 0.25) 0px 8px 50px;
+      ${'' /* box-shadow: rgba(51, 255, 0, 0.05) 0px 6px 24px 0px, rgba(51, 255, 0, 1) 0px 0px 0px 1px; */}
       border-radius: 18px;
       display: flex;
       justify-content: center;

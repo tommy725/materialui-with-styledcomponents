@@ -10,6 +10,7 @@ export const Wrapper = styled(Box)`
     line-height: 1;
     color: white;
     font-size: 16px;
+    letter-spacing: ${({ theme }) => theme.typography.letterSpacing};
     margin-top: 7px;
   }
 `;

@@ -7,7 +7,7 @@ export const bridgeSlice = createSlice({
   initialState: {
     startCoinIdx: 0,
     destCoinIdx: 0,
-    amount: 0,
+    amount: "",
     receivedAmount: 0,
     exchangeNotice: "1 ETH = 1,270.76787 MATIC",
     coinList: [

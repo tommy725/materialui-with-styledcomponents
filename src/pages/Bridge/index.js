@@ -6,6 +6,7 @@ import { Wrapper, CurvedLine } from './styles';
 
 import SwapHeader from '../../components/SwapHeader';
 import ChainItem from '../../components/ChainItem';
+import WaveAnim from '../../components/WaveAnim';
 import CustomButton from '../../components/CustomButton';
 import InputAmount from '../../components/InputAmount';
 import OtherRoutes from '../../components/OtherRoutes';
@@ -60,8 +61,10 @@ function Bridge() {
     <Wrapper>
       <SwapHeader />
       <Box className="body">
-        
         <Box className="coin-type">
+          <Box className="wave-anim">
+            <WaveAnim />
+          </Box>
           <ChainItem coinIdx={ startCoinIdx } handleChangeCoin={ handleChangeStart }/>
           <CustomButton isSwap={ true } handleAction={ handleSwap } />
           <ChainItem coinIdx={destCoinIdx} handleChangeCoin={ handleChangeDest }/>

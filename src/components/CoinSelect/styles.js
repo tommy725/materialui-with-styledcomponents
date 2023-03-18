@@ -40,6 +40,7 @@ export const Wrapper = styled(Box)`
           color: white;
           display: inline;
           font-size: 20px;
+          letter-spacing: ${({ theme }) => theme.typography.letterSpacing};
           padding-top: 2px
         }
 

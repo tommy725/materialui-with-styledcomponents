@@ -18,7 +18,7 @@ export const Wrapper = styled(Container)`
 export const Title = styled(Typography)`
   color: white;
   font-size: 28px;
-  font-weight: bold;
+  letter-spacing: ${({ theme }) => theme.typography.letterSpacing};
   margin-left: 40px;
   margin-bottom: 0;
 `;

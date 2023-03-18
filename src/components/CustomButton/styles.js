@@ -6,10 +6,12 @@ export const ButtonWrapper = styled(Box)`
   .MuiButton-root {
     width: 100%;
     height: 60px;
-    background: #46FF18;
-    border-radius: 10px;
+    background: #2FED00;
+    border: 1px solid #46FF18;
+    border-radius: 6px;
     color: #181B18;
     font-size: 20px;
+    letter-spacing: ${({ theme }) => theme.typography.letterSpacing};
     margin: 0;
     text-align: center;    
     text-transform: initial;
@@ -17,6 +19,9 @@ export const ButtonWrapper = styled(Box)`
 
   .MuiButton-root.swap {
     min-width: 60px;
+    background: #33FF00;
+    border: none;
+    border-radius: 11px;
   }
 
   .MuiButton-startIcon { 

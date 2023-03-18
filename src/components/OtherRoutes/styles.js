@@ -11,6 +11,8 @@ export const Wrapper = styled(Container)`
     p {
       color: #33FF00;
       font-size: 20px;
+      letter-spacing: ${({ theme }) => theme.typography.letterSpacing};
+      text-transform: initial;
     }
 
     .arrow-down {

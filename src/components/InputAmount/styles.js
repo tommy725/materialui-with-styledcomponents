@@ -8,6 +8,7 @@ export const Wrapper = styled(Container)`
   .title {
     color: white;
     font-size: 16px;
+    letter-spacing: ${({ theme }) => theme.typography.letterSpacing};
     line-height: 1;
   }
 
@@ -19,7 +20,7 @@ export const Wrapper = styled(Container)`
     .amount {
       width: 100%;
       border: 1px solid white;
-      border-right: 1px solid #33FF00;
+      border-right: none;
       border-bottom-left-radius: 10px;
       border-top-left-radius: 10px;
 
@@ -30,6 +31,7 @@ export const Wrapper = styled(Container)`
       input {
         color: white;
         font-size: 20px;
+        letter-spacing: ${({ theme }) => theme.typography.letterSpacing};
         padding: 0 20px;
       }     
     }
@@ -47,6 +49,7 @@ export const Wrapper = styled(Container)`
     line-height: 1;
     color: #B7B7B7;
     font-size: 14px;
+    letter-spacing: ${({ theme }) => theme.typography.letterSpacing};
     margin-top: 12px;
     text-align: end;
   }
