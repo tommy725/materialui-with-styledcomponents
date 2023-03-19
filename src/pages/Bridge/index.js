@@ -1,8 +1,9 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Box } from '@material-ui/core';
-import { Wrapper, CurvedLine } from './styles';
+import { Container, Box } from '@material-ui/core';
+import { NumberFormatter } from '../../utils/Util';
+import { Wrapper } from './styles';
 
 import SwapHeader from '../../components/SwapHeader';
 import ChainItem from '../../components/ChainItem';
@@ -49,7 +50,8 @@ const Bridge = () => {
 
   const handleChangeAmount = (event) => {
     // useDispatch
-    dispatch(changeAmount(Number(event.target.value) || 0))
+    console.log("Input value =====> ", event.floatValue);
+    dispatch(changeAmount(event.floatValue))
   };
 
   const handleApprove = (event) => {
@@ -60,7 +62,7 @@ const Bridge = () => {
   return (
     <Wrapper>
       <SwapHeader />
-      <Box className="body">
+      <Container className="container">
         <Box className="coin-type">
           <Box className="wave-anim">
             <WaveAnim />
@@ -80,7 +82,7 @@ const Bridge = () => {
         </Box>
 
         <CustomButton />
-      </Box>
+      </Container>
     </Wrapper>
   );
 }

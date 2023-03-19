@@ -5,16 +5,17 @@ export const Wrapper = styled(Container)`
   max-width: 788px;
   width: 60%;
   min-width: 540px;
-  height: 921px;
+  height: wrap-content;
   background-color: #313631;
   border-radius: 30px;
   margin-top: 31px;
   padding-left: 0;
   padding-right: 0;
 
-  .body {
+  .container {
     padding-left: 40px;
     padding-right: 40px;
+    padding-bottom: 40px;
 
     .coin-type {
       align-items: flex-end;
