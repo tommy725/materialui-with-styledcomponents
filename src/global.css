@@ -25,13 +25,6 @@ only screen and (min-device-pixel-ratio : 1.5) {
   font-size: 2rem;
 }
 
-body.menu-open {
-  overflow: hidden;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
 @font-face {
   font-family: 'GRIFTER';
   src: local('grifterbold'), url(./assets/fonts/grifterbold.otf) format('OpenType');

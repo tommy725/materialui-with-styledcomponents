@@ -43,7 +43,6 @@ export const Wrapper = styled(Container)`
     }
 
     .ripple:nth-of-type(2) {
-      ${'' /* animation-delay: -2000ms; */}
       animation-delay: -1000ms;
     }  
   }

@@ -17,7 +17,6 @@ export const Wrapper = styled(Container)`
     }
   }
 
-
   /* iPhone 4 ----------- */
   @media
   only screen and (-webkit-min-device-pixel-ratio : 1.5),
