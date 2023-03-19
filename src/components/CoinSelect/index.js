@@ -25,7 +25,10 @@ const CoinSelect = (props) => {
         >
         {coinList &&
           coinList.map((item, idx) => (
-            <MenuItem value={idx}>{ noIcon ? "" : <img style={{display: "none"}} src={coinList[coinIdx].image} alt=""/>}<Typography>{item.name}</Typography></MenuItem>
+            <MenuItem value={idx}>
+              <img className={ noIcon ? "no-icon" : ""} src={item.image} style={{ width: "20px", height: "20px", marginRight: "10px", verticalAlign: "middle" }} alt=""/>
+              <Typography>{item.name}</Typography>
+            </MenuItem>
           ))
         }
         </Select>

@@ -28,12 +28,8 @@ export const Wrapper = styled(Box)`
         padding: 0 20px;
         text-align: left;
 
-        img {
-          width: 20px;
-          height: 20px;
-          display: initial !important;
-          margin-right: 10px;
-          vertical-align: middle;
+        img.no-icon {
+          display: none;
         }
 
         p {
