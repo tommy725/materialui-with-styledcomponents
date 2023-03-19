@@ -12,7 +12,7 @@ const CustomButton = (props) => {
   } = props;
 
   return ( 
-    <ButtonWrapper sx={{margin: isSwap ? '0 24px' : "32px 0 0 0"}}>
+    <ButtonWrapper sx={{margin: isSwap ? '0 2.4rem' : "3.2rem 0 0 0"}}>
       <Button 
         className={isSwap ? "swap" : "approve"} 
         focusRipple 

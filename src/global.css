@@ -1,6 +1,34 @@
+html {
+  font-size: 10px;
+}
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+/* Styles */
+  html {
+    font-size: 7px;
+  }
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+  html {
+    font-size: 7px;
+  }
+}
+
+.MuiTypography-body1 {
+  font-size: 2rem;
+}
+
 body.menu-open {
   overflow: hidden;
 }
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

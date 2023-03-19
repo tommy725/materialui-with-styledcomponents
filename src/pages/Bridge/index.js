@@ -2,7 +2,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Container, Box } from '@material-ui/core';
-import { NumberFormatter } from '../../utils/Util';
 import { Wrapper } from './styles';
 
 import SwapHeader from '../../components/SwapHeader';
@@ -61,29 +60,32 @@ const Bridge = () => {
 
   return (
     <Wrapper>
-      <SwapHeader />
       <Container className="container">
-        <Box className="coin-type">
-          <Box className="wave-anim">
-            <WaveAnim />
+        <SwapHeader />
+        <Container className="swap-body">
+          <Box className="coin-type">
+            <Box className="wave-anim">
+              <WaveAnim />
+            </Box>
+            <ChainItem coinIdx={ startCoinIdx } handleChangeCoin={ handleChangeStart }/>
+            <CustomButton isSwap={ true } handleAction={ handleSwap } />
+            <ChainItem coinIdx={destCoinIdx} handleChangeCoin={ handleChangeDest }/>
           </Box>
-          <ChainItem coinIdx={ startCoinIdx } handleChangeCoin={ handleChangeStart }/>
-          <CustomButton isSwap={ true } handleAction={ handleSwap } />
-          <ChainItem coinIdx={destCoinIdx} handleChangeCoin={ handleChangeDest }/>
-        </Box>
-        
-        <Box className="amount-group">
-          <InputAmount title={ "Enter Amount" } amount={ amount } coinIdx={ startCoinIdx } handleChangeCoin={ handleChangeStart } handleChangeAmount={ handleChangeAmount } />
-          <InputAmount title={ "Received" } amount={ receivedAmount } exchangeNotice={ exchangeNotice } coinIdx={ destCoinIdx } handleChangeCoin={ handleChangeDest } readOnly={ true } />
-        </Box>
+          
+          <Box className="amount-group">
+            <InputAmount title={ "Enter Amount" } amount={ amount } coinIdx={ startCoinIdx } handleChangeCoin={ handleChangeStart } handleChangeAmount={ handleChangeAmount } />
+            <InputAmount title={ "Received" } amount={ receivedAmount } exchangeNotice={ exchangeNotice } coinIdx={ destCoinIdx } handleChangeCoin={ handleChangeDest } readOnly={ true } />
+          </Box>
 
-        <Box className="other-routes">
-          <OtherRoutes />
-        </Box>
+          <Box className="other-routes">
+            <OtherRoutes />
+          </Box>
 
-        <CustomButton />
+          <CustomButton handleAction={ handleSwap } />
+        </Container>
       </Container>
     </Wrapper>
+    
   );
 }
 

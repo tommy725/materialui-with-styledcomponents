@@ -13,8 +13,8 @@ export const Wrapper = styled(Box)`
 
     .MuiInput-formControl {
       height: ${({ theme }) => theme.size.button.height};
-      border: 1px solid white;
-      border-radius: 10px;
+      border: 0.1rem solid white;
+      border-radius: 1rem;
 
       ::before, ::after {
         display: none;
@@ -25,7 +25,7 @@ export const Wrapper = styled(Box)`
         line-height: ${({ theme }) => theme.size.button.height};
         align-items: center;
         display: flex;
-        padding: 0 20px;
+        padding: 0 2rem;
         text-align: left;
 
         img.no-icon {
@@ -35,17 +35,17 @@ export const Wrapper = styled(Box)`
         p {
           color: white;
           display: inline;
-          font-size: 20px;
+          font-size: 2rem;
           letter-spacing: ${({ theme }) => theme.typography.letterSpacing};
-          padding-top: 2px
+          padding-top: 0.2rem;
         }
 
         ::after {
           position: absolute; 
-          top: 18px;
-          right: 20px;
-          width: 24px;
-          height: 24px;
+          top: 1.8rem;
+          right: 2rem;
+          width: 2.4rem;
+          height: 2.4rem;
           content: '';
           background-image: url(${ArrowDownWhiteSvg});
           background-repeat: no-repeat;

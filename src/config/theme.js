@@ -19,19 +19,19 @@ const theme = createTheme({
   },
   size: {
     button: {
-      height: '60px'
+      height: '6rem'
     }
   },
   typography: {
     fontFamily: ['GRIFTER', 'sans-serif'].join(','),
     // fontFamily: 'grifterbold';
-    fontSize: 16,
-    letterSpacing: "1px"
+    fontSize: "1.6rem",
+    letterSpacing: "0.1rem"
   },
   overrides: {
     MuiButton: {
       root: {
-        margin: '5px',
+        margin: '0.5rem',
         borderRadius: 100,
       },
     },

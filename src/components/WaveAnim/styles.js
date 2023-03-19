@@ -16,17 +16,17 @@ export const Wrapper = styled(Box)`
 
     .line {
       animation: loop 3s linear infinite;
-      border-radius: 300px;
+      border-radius: 30rem;
       stroke: #00FF00;
-      stroke-width: 6px;
-      stroke-dasharray: 400px, 4600px;
+      stroke-width: 0.6rem;
+      stroke-dasharray: 40rem, 460rem;
       stroke-linecap: round;
     }
     
     .line.behind {
       stroke: #33FF00;
-      filter: blur(10px);
-      stroke-width: 5px;
+      filter: blur(1rem);
+      stroke-width: 0.8rem;
     }
 
     .line2, .line6 {
@@ -34,7 +34,7 @@ export const Wrapper = styled(Box)`
     }
     
     .line3, .line7 {
-      stroke-dasharray: 250px, 4750px;
+      stroke-dasharray: 25rem, 475rem;
       animation-delay: 0.9s;
     }
 
@@ -47,7 +47,7 @@ export const Wrapper = styled(Box)`
         stroke-dashoffset: 0;
       }
       100% {
-        stroke-dashoffset: -5000px;
+        stroke-dashoffset: -500rem;
       }
     }
   }

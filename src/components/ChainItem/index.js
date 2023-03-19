@@ -29,7 +29,7 @@ const ChainItem = (props) => {
         </Box>
       </Box>
 
-      <Box sx={{marginTop: "48px"}}>
+      <Box sx={{marginTop: "4.8rem"}}>
         <CoinSelect coinIdx={coinIdx} handleChangeCoin={handleChangeCoin} noIcon={ true }/>
       </Box>
       

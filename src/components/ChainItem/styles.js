@@ -10,11 +10,11 @@ export const Wrapper = styled(Container)`
   padding-right: 0;
 
   div.image-container {
-    width: 95px;
-    height: 95px;
+    width: 9.5rem;
+    height: 9.5rem;
     display: inline-flex;
     line-height: normal;
-    margin-top: 40px;
+    margin-top: 4rem;
     position: relative;
     
     .MuiBox-root {
@@ -22,12 +22,16 @@ export const Wrapper = styled(Container)`
       height: 100%;
       align-items: center;
       background-color: white;
-      box-shadow: rgba(51, 255, 0, 0.25) 0px 8px 50px;
-      ${'' /* box-shadow: rgba(51, 255, 0, 0.05) 0px 6px 24px 0px, rgba(51, 255, 0, 1) 0px 0px 0px 1px; */}
-      border-radius: 18px;
+      box-shadow: rgba(51, 255, 0, 0.25) 0 0.8rem 5rem;
+      border-radius: 1.8rem;
       display: flex;
       justify-content: center;
       z-index: 1;
+
+      img {
+        width: 7.8rem;
+        width: 7.8rem;
+      }
     }
 
     .ripple {
@@ -50,8 +54,8 @@ export const RippleAnimView = styled.div`
   height: 100%;
   animation: ripple 2s linear infinite;
   background-color: transparent;
-  border: 1px solid #33FF00;
-  border-radius: 18px;
+  border: 0.1rem solid #33FF00;
+  border-radius: 1.8rem;
   position: absolute;
   z-index: 0;
 

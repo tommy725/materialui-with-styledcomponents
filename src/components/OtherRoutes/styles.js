@@ -11,18 +11,21 @@ export const Wrapper = styled(Container)`
 
     p {
       color: #33FF00;
-      font-size: 20px;
+      font-size: 2rem;
       letter-spacing: ${({ theme }) => theme.typography.letterSpacing};
-      margin-right: 20px;
+      margin-right: 2rem;
       text-transform: initial;
     }
 
     .arrow-up {
-      ${'' /* transform: rotate(180deg);  */}
+      width: 2.4rem;
+      height: 2.4rem;
       transition: transform 150ms ease;
     }
 
     .arrow-down {
+      width: 2.4rem;
+      height: 2.4rem;
       transform: rotate(180deg); 
       transition: transform 150ms ease;
     }
@@ -32,15 +35,15 @@ export const Wrapper = styled(Container)`
     height: wrap-content;
     display: flex;
     justify-content: space-between;
-    margin-top: 23px;
-    padding: 0 40px;
+    margin-top: 2.3rem;
+    padding: 0 4rem;
     position: relative;
 
     .dot-line {
-      width: calc(100% - 40px * 2);
-      left: 40px;
-      right: 40px;
-      top: 26px;
+      width: calc(100% - 4rem * 2);
+      left: 4rem;
+      right: 4rem;
+      top: 2.6rem;
       position: absolute;
       z-index: 0;
     }
