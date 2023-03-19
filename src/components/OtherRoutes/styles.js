@@ -5,6 +5,7 @@ export const Wrapper = styled(Container)`
   padding: 0;
   
   .title {
+    border-radius: 0;
     margin: 0;
     padding: 0;
 
@@ -12,15 +13,23 @@ export const Wrapper = styled(Container)`
       color: #33FF00;
       font-size: 20px;
       letter-spacing: ${({ theme }) => theme.typography.letterSpacing};
+      margin-right: 20px;
       text-transform: initial;
     }
 
+    .arrow-up {
+      ${'' /* transform: rotate(180deg);  */}
+      transition: transform 150ms ease;
+    }
+
     .arrow-down {
-      margin-left: 20px;
+      transform: rotate(180deg); 
+      transition: transform 150ms ease;
     }
   }
 
   .routes {
+    height: wrap-content;
     display: flex;
     justify-content: space-between;
     margin-top: 23px;

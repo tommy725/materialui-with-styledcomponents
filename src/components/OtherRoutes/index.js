@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Typography, Button, Container } from "@material-ui/core";
+import { Container, Box, Typography, Button, Collapse } from "@material-ui/core";
 
 import { ReactComponent as ArrowDownSvg } from "../../assets/images/arrow-down-primary.svg"
 import { ReactComponent as DotLineSvg} from "../../assets/images/dot-line.svg"
@@ -11,19 +11,28 @@ import { Wrapper } from "./styles";
 import RouteItem from "./RouteItem";
 
 const OtherRoutes = () => {
+  const [collapsed, setCollapsed] = useState(true);
+
+  const handleCollapsedEvent = () => {
+    setCollapsed(!collapsed)
+  }
+
   return (
     <Wrapper>
-      <Button className="title">
+      <Button className="title" onClick={ handleCollapsedEvent }>
         <Typography>Other Routes</Typography>
-        <ArrowDownSvg className="arrow-down" />
+        
+        <ArrowDownSvg className={ collapsed ? "arrow-up": "arrow-down" } />
       </Button>
 
-      <Container className="routes">
-        <DotLineSvg className="dot-line" />
-        <RouteItem image={ OneInchSvg } title="1inch" />
-        <RouteItem image={ DeBridgeSvg } title="deBridge" />
-        <RouteItem image={ OneInchSvg } title="1inch" />
-      </Container>
+      <Collapse in={ !collapsed }>
+        <Container className={ "routes" }>
+          <DotLineSvg className="dot-line" />
+          <RouteItem image={ OneInchSvg } title="1inch" />
+          <RouteItem image={ DeBridgeSvg } title="deBridge" />
+          <RouteItem image={ OneInchSvg } title="1inch" />
+        </Container>
+      </Collapse>
       
     </Wrapper>
   );
