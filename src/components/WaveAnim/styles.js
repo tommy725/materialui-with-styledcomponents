@@ -10,35 +10,35 @@ export const Wrapper = styled(Box)`
     height: 100%;
     display: block;
 
-    .path-bg, .line {
+    .line {
       fill: none;
-    }
-
-    .path-bg {
-      stroke-width: 50px;
-      stroke: #87AEAF;
-      stroke-opacity: 0.3;
     }
 
     .line {
       animation: loop 3s linear infinite;
       border-radius: 300px;
-      stroke: #33FF00;
+      stroke: #00FF00;
       stroke-width: 6px;
       stroke-dasharray: 400px, 4600px;
       stroke-linecap: round;
     }
+    
+    .line.behind {
+      stroke: #33FF00;
+      filter: blur(10px);
+      stroke-width: 5px;
+    }
 
-    .line2 {
+    .line2, .line6 {
       animation-delay: 0.6s;
     }
     
-    .line3 {
+    .line3, .line7 {
       stroke-dasharray: 250px, 4750px;
       animation-delay: 0.9s;
     }
 
-    .line.line4 {
+    .line4, .line8 {
       animation-delay: 1.2s;
     }
 
