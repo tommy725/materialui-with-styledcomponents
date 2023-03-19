@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Box, Typography, Input } from "@material-ui/core";
+import { Box, Typography, Input  } from "@material-ui/core";
+import { NumericFormat } from 'react-number-format';
 
-import { Wrapper } from "./styles.module";
+import { Wrapper } from "./styles";
 
 import CoinSelect from "../CoinSelect";
 
@@ -21,7 +22,15 @@ const InputAmount = (props) => {
     <Wrapper>
       <Typography className="title">{ title }</Typography>
       <Box className="input-field">
-        <Input readOnly={ readOnly } type="number" className="amount" value={ amount } onChange={ handleChangeAmount }></Input>
+        <NumericFormat 
+          allowNegative= { false }
+          thousandSeparator={true} 
+          readOnly={ readOnly } 
+          placeholder="0" 
+          className="amount" 
+          value={ amount } 
+          onValueChange= { handleChangeAmount }
+        />
         <Box className="coin-select">
           <CoinSelect noBorder={ true } coinIdx={ coinIdx } handleChangeCoin={ handleChangeCoin } />
         </Box>
