@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FormControl, Select, MenuItem, Box, Typography} from "@material-ui/core"
 
-import { Wrapper } from './styles'
+import { Wrapper } from './styles.module'
 
 const CoinSelect = (props) => {
   const {

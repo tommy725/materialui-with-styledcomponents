@@ -6,7 +6,7 @@ import { ReactComponent as DotLineSvg} from "../../assets/images/dot-line.svg"
 import DeBridgeSvg from "../../assets/images/debridge.svg"
 import OneInchSvg from "../../assets/images/1inch.svg"
 
-import { Wrapper } from "./styles";
+import { Wrapper } from "./styles.module";
 
 import RouteItem from "./RouteItem";
 

@@ -51,7 +51,6 @@ export const Wrapper = styled(Box)`
       }
     }
   }
-  
 `;
 
 

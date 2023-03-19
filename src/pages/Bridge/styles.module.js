@@ -52,8 +52,8 @@ export const Wrapper = styled(Container)`
 
         .wave-anim {
           position: absolute;
-          left: 17.5rem;
-          right: 17.5rem;
+          left: 19rem;
+          right: 19rem;
           top: 4rem;
           height: 9.5rem;
         }

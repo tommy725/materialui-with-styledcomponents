@@ -2,7 +2,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Container, Box } from '@material-ui/core';
-import { Wrapper } from './styles';
+import { Wrapper } from './styles.module';
 
 import SwapHeader from '../../components/SwapHeader';
 import ChainItem from '../../components/ChainItem';
@@ -81,7 +81,7 @@ const Bridge = () => {
             <OtherRoutes />
           </Box>
 
-          <CustomButton handleAction={ handleSwap } />
+          <CustomButton handleAction={ handleApprove } />
         </Container>
       </Container>
     </Wrapper>

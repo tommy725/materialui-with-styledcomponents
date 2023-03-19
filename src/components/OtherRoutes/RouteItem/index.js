@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { Typography } from "@material-ui/core";
 
-import { Wrapper, Image } from "./styles";
+import { Wrapper, Image } from "./styles.module";
 
 const RouteItem = (props) => {
   const {

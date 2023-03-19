@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { Container } from '@material-ui/core';
-import { Wrapper, Title, SettingButton } from './styles';
+import { Wrapper, Title, SettingButton } from './styles.module';
 import SettingSvg  from '../../assets/images/setting.svg'
 
 const Header = () => {

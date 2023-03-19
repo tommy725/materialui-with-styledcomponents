@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Box, Image } from "@material-ui/core";
 
-import { Wrapper, RippleAnimView } from "./styles";
+import { Wrapper, RippleAnimView } from "./styles.module";
 
 import CoinSelect from "../CoinSelect"
 

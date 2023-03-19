@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Box, Typography, Input  } from "@material-ui/core";
 import { NumericFormat } from 'react-number-format';
 
-import { Wrapper } from "./styles";
+import { Wrapper } from "./styles.module";
 
 import CoinSelect from "../CoinSelect";
 
