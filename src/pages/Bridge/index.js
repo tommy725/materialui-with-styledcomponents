@@ -22,6 +22,7 @@ import {
   selectAmount,
   selectReceivedAmount,
   selectExchangeNotice,
+  changeReceiveAmountAndNotice,
 } from '../../redux/bridge';
 
 const Bridge = () => {
@@ -35,22 +36,26 @@ const Bridge = () => {
   const handleChangeStart = (event) => {
     // useDispatch
     dispatch(changeStart(Number(event.target.value) || 0))
+    dispatch(changeReceiveAmountAndNotice());
   };
 
   const handleChangeDest = (event) => {
     // useDispatch
     dispatch(changeDest(Number(event.target.value) || 0))
+    dispatch(changeReceiveAmountAndNotice());
   };
 
   const handleSwap = (event) => {
     // useDispatch
     dispatch(swap())
+    dispatch(changeReceiveAmountAndNotice());
   };
 
   const handleChangeAmount = (event) => {
     // useDispatch
     console.log("Input value =====> ", event.floatValue);
     dispatch(changeAmount(event.floatValue))
+    dispatch(changeReceiveAmountAndNotice());
   };
 
   const handleApprove = (event) => {
@@ -77,9 +82,9 @@ const Bridge = () => {
             <InputAmount title={ "Received" } amount={ receivedAmount } exchangeNotice={ exchangeNotice } coinIdx={ destCoinIdx } handleChangeCoin={ handleChangeDest } readOnly={ true } />
           </Box>
 
-          <Box className="other-routes">
+          {/* <Box className="other-routes">
             <OtherRoutes />
-          </Box>
+          </Box> */}
 
           <CustomButton handleAction={ handleApprove } />
         </Container>

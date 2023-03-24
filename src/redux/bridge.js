@@ -1,20 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
-import EthereumSvg  from '../assets/images/ethereum.svg'
-import PolygonSvg  from '../assets/images/polygon.svg'
+import XRPLSvg  from '../assets/images/xrpl.svg'
+import CosmosSvg  from '../assets/images/cosmos.svg'
 
 export const bridgeSlice = createSlice({
   name: 'bridge',
   initialState: {
     startCoinIdx: 0,
-    destCoinIdx: 0,
+    destCoinIdx: 1,
     amount: "",
     receivedAmount: 0,
-    exchangeNotice: "1 ETH = 1,270.76787 MATIC",
+    exchangeNotice: "1 XRP = 0.031521 Cosmos",
     coinList: [
-      {id: 1, name: 'Ethereum', image: EthereumSvg},
-      {id: 2, name: 'Bitcoin', image: EthereumSvg},
-      {id: 3, name: 'Polygon', image: PolygonSvg},
-      {id: 4, name: 'Matic', image: PolygonSvg},
+      {id: 1, name: 'XRPL', image: XRPLSvg},
+      {id: 2, name: 'Cosmos', image: CosmosSvg},
     ]
   },
   reducers: {
@@ -29,23 +27,52 @@ export const bridgeSlice = createSlice({
     },
     
     changeStart: (state, action) => {
+      state.destCoinIdx = state.startCoinIdx;
       state.startCoinIdx = action.payload;
     },
 
     changeDest: (state, action) => {
+      state.startCoinIdx = state.destCoinIdx;
       state.destCoinIdx = action.payload;
+    },
+
+    changeNotice: (state, action) => {
+      state.destCoinIdx = state.startCoinIdx;
+
+      state.startCoinIdx = action.payload;
     },
 
     changeAmount: (state, action) => {
       state.amount = action.payload;
-
-      // Calculate received amount.
-      state.receivedAmount = state.amount + 5;
     },
+
+    changeReceiveAmountAndNotice:(state) => {
+      // Calculate received amount.
+      // startCoinIdx
+      // 0: xrpl -> cosmos
+      // 1: cosmos -> xrpl
+      if (state.startCoinIdx == 0) {
+        state.receivedAmount = state.amount * 0.031521;
+      } else {
+        state.receivedAmount = state.amount / 0.031521;
+      }
+
+      if (state.receivedAmount > 0) {
+        state.receivedAmount = state.receivedAmount.toFixed(6);
+      } else {
+        state.receivedAmount = 0;
+      }
+
+      if (state.startCoinIdx == 0) {
+        state.exchangeNotice = "1 XRPL = 0.031521 Cosmos";
+      } else {
+        state.exchangeNotice = "1 Cosmos = 31.724882 XRPL";
+      }
+    }
   },
 });
 
-export const { swap, changeStart, changeDest, changeAmount } = bridgeSlice.actions;
+export const { swap, changeStart, changeDest, changeAmount, changeReceiveAmountAndNotice } = bridgeSlice.actions;
 
 // The function below is called a thunk and allows us to perform async logic. It
 // can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This

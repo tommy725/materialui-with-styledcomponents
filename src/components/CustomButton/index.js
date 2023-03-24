@@ -19,7 +19,7 @@ const CustomButton = (props) => {
         startIcon={isSwap ? <SwapSvg/> : <CardTickSvg/>}
         onClick={() => handleAction()}
       >
-        {isSwap ? "" : "Approve"}
+        {isSwap ? "" : "Coming Soon"}
       </Button>
     </ButtonWrapper>
   )

@@ -9,7 +9,7 @@ const Header = () => {
     <Wrapper>
       <Container class="header-container">
         <Title>
-          Cross-Chain Swaps
+          XRPL-Cosmos Bridge
         </Title>
         <SettingButton variant="contained">
           <img src={SettingSvg} alt='Setting' />
