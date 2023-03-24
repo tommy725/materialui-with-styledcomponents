@@ -65,6 +65,7 @@ function Bridge() {
           <Box className="wave-anim">
             <WaveAnim />
           </Box>
+          fdsafdsafdsafdas
           <ChainItem coinIdx={ startCoinIdx } handleChangeCoin={ handleChangeStart }/>
           <CustomButton isSwap={ true } handleAction={ handleSwap } />
           <ChainItem coinIdx={destCoinIdx} handleChangeCoin={ handleChangeDest }/>
