@@ -2,6 +2,9 @@ import { Container } from "@material-ui/core";
 import styled from "styled-components";
 
 export const Wrapper = styled(Container)`
+  width: 100%;
+  display: flex;
+  max-width: 100%;
   padding: 0;
 
   /* Smartphones (portrait and landscape) ----------- */
@@ -30,20 +33,21 @@ export const Wrapper = styled(Container)`
   }
 
   .container {
-    max-width: 78.8rem;
+    max-width: 49.25rem;
     width: 60%;
-    min-width: 54rem;
+    min-width: 33.75rem;
     height: wrap-content;
     background-color: #313631;
-    border-radius: 3rem;
-    margin-top: 3.1rem;
+    border-radius: 1.875rem;
+    margin: 1.625rem auto;
     padding-left: 0;
     padding-right: 0;
+    position: inherit;
 
     .swap-body {
-      padding-left: 4rem;
-      padding-right: 4rem;
-      padding-bottom: 4rem;
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+      padding-bottom: 2.5rem;
 
       .coin-type {
         align-items: flex-end;
@@ -52,19 +56,19 @@ export const Wrapper = styled(Container)`
 
         .wave-anim {
           position: absolute;
-          left: 19rem;
-          right: 19rem;
-          top: 4rem;
-          height: 9.5rem;
+          left: 11.875rem;
+          right: 11.875rem;
+          top: 1.5625rem;
+          height: 5.9375rem;
         }
       }
 
       .amount-group {
-        margin-top: 5rem;
+        margin-top: 3.125rem;
       }
 
       .other-routes {
-        margin-top: 3.4rem;
+        margin-top: 2.125rem;
       }
     }
   }

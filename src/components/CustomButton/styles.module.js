@@ -5,12 +5,12 @@ export const ButtonWrapper = styled(Box)`
 
   .MuiButton-root {
     width: 100%;
-    height: 6rem;
+    height: 3.75rem;
     background: #2FED00;
-    border: 0.1rem solid #46FF18;
-    border-radius: 0.6rem;
+    border: 0.0625rem solid #46FF18;
+    border-radius: 0.375rem;
     color: #181B18;
-    font-size: 2rem;
+    font-size: 1.25rem;
     letter-spacing: ${({ theme }) => theme.typography.letterSpacing};
     margin: 0;
     text-align: center;    
@@ -18,15 +18,15 @@ export const ButtonWrapper = styled(Box)`
   }
 
   .MuiButton-root.swap {
-    min-width: 6rem;
+    min-width: 3.75rem;
     background: #33FF00;
     border: none;
-    border-radius: 1.1rem;
+    border-radius: 0.6875rem;
   }
 
   .MuiButton-startIcon { 
-    margin-left: 0.6rem;
-    margin-right: 1.767rem;
+    margin-left: 0.375rem;
+    margin-right: 1.104375rem;
   }
 
   .swap .MuiButton-startIcon { 

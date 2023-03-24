@@ -9,13 +9,13 @@ export const Wrapper = styled(Box)`
   p {
     line-height: 1;
     color: white;
-    font-size: 1.6rem;
+    font-size: 1rem;
     letter-spacing: ${({ theme }) => theme.typography.letterSpacing};
-    margin-top: 0.7rem;
+    margin-top: 0.4375rem;
   }
 `;
 
 export const Image = styled.img`
-  width: 5.2rem;
-  height: 5.2rem;
+  width: 3.25rem;
+  height: 3.25rem;
 `;

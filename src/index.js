@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'fontsource-roboto';
-import './global.css';
+import "./styles/index.scss";
+import "./styles/custom.scss";
+import './index.css';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from 'styled-components';
 import { MuiThemeProvider, StylesProvider } from '@material-ui/core/styles';
