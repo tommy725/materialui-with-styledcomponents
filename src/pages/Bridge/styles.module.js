@@ -57,7 +57,7 @@ export const Wrapper = styled(Container)`
           position: absolute;
           left: 11.875rem;
           right: 11.875rem;
-          top: 1.5625rem;
+          top: 2.5rem;
           height: 5.9375rem;
         }
       }
