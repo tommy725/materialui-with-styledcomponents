@@ -8,7 +8,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from 'styled-components';
 import { MuiThemeProvider, StylesProvider } from '@material-ui/core/styles';
 import { Provider } from 'react-redux';
-import App from './app';
+import App from './App';
 import theme from './config/theme';
 import store from './config/store';
 import * as serviceWorker from './config/serviceWorker';

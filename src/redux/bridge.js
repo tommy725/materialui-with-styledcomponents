@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import XRPLSvg  from '../assets/images/xrpl.svg'
-import CosmosSvg  from '../assets/images/cosmos.svg'
+import XRPSvg  from '../assets/images/xrp.svg'
+import AtomSvg  from '../assets/images/atom.svg'
 
 export const bridgeSlice = createSlice({
   name: 'bridge',
@@ -9,10 +9,10 @@ export const bridgeSlice = createSlice({
     destCoinIdx: 1,
     amount: "",
     receivedAmount: 0,
-    exchangeNotice: "1 XRP = 0.031521 Cosmos",
+    exchangeNotice: "1 XRP = 0.031521 Atom",
     coinList: [
-      {id: 1, name: 'XRPL', image: XRPLSvg},
-      {id: 2, name: 'Cosmos', image: CosmosSvg},
+      {id: 1, name: 'XRP', image: XRPSvg},
+      {id: 2, name: 'Atom', image: AtomSvg},
     ]
   },
   reducers: {
@@ -64,9 +64,9 @@ export const bridgeSlice = createSlice({
       }
 
       if (state.startCoinIdx == 0) {
-        state.exchangeNotice = "1 XRPL = 0.031521 Cosmos";
+        state.exchangeNotice = "1 XRP = 0.031521 Atom";
       } else {
-        state.exchangeNotice = "1 Cosmos = 31.724882 XRPL";
+        state.exchangeNotice = "1 Atom = 31.724882 XRP";
       }
     }
   },

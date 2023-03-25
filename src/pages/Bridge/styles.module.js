@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled(Container)`
   width: 100%;
-  display: flex;
+  ${'' /* display: flex; */}
   max-width: 100%;
   padding: 0;
 
@@ -23,7 +23,7 @@ export const Wrapper = styled(Container)`
   /* iPhone 4 ----------- */
   @media
   only screen and (-webkit-min-device-pixel-ratio : 1.5),
-  only screen and (min-device-pixel-ratio : 1.5) {
+  only screen and (min-device-pixel-ratio : 1.5) {  
     .container {
       max-width: 100vw important;
       width: 100vw !important;
@@ -36,10 +36,9 @@ export const Wrapper = styled(Container)`
     max-width: 49.25rem;
     width: 60%;
     min-width: 33.75rem;
-    height: wrap-content;
+    height: fit-content;
     background-color: #313631;
     border-radius: 1.875rem;
-    margin: 1.625rem auto;
     padding-left: 0;
     padding-right: 0;
     position: inherit;
