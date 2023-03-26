@@ -14,9 +14,9 @@ export const Wrapper = styled(Container)`
   and (max-device-width : 540px) {
   /* Styles */
     .bridge-container {
-      max-width: calc(100vw - 4rem) important;
-      width: calc(100vw - 4rem) !important;
-      min-width: calc(100vw - 4rem) !important;
+      max-width: calc(100vw - 5rem) important;
+      width: calc(100vw - 5rem) !important;
+      min-width: 284px !important;
     }
   }
 
