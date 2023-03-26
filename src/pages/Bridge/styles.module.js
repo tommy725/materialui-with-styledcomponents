@@ -7,32 +7,20 @@ export const Wrapper = styled(Container)`
   max-width: 100%;
   padding: 0;
 
+  
   /* Smartphones (portrait and landscape) ----------- */
   @media only screen 
-  and (min-device-width : 320px) 
-  and (max-device-width : 480px) {
+  ${'' /* and (min-device-width : 320px)  */}
+  and (max-device-width : 540px) {
   /* Styles */
-    .container {
-      max-width: 100vw important;
-      width: 100vw !important;
-      min-width: 100vw !important;
-      border-radius: 0 !important;
+    .bridge-container {
+      max-width: calc(100vw - 4rem) important;
+      width: calc(100vw - 4rem) !important;
+      min-width: calc(100vw - 4rem) !important;
     }
   }
 
-  /* iPhone 4 ----------- */
-  @media
-  only screen and (-webkit-min-device-pixel-ratio : 1.5),
-  only screen and (min-device-pixel-ratio : 1.5) {  
-    .container {
-      max-width: 100vw important;
-      width: 100vw !important;
-      min-width: 100vw !important;
-      border-radius: 0 !important;
-    }
-  }
-
-  .container {
+  .bridge-container {
     max-width: 49.25rem;
     width: 60%;
     min-width: 33.75rem;

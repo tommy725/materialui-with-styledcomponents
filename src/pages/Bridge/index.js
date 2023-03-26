@@ -68,45 +68,49 @@ const Bridge = () => {
   return (
     <div class="bg-white text-base dark:bg-[#181B18] text-neutral-900 dark:text-neutral-200">
       <Wrapper>
-        <div className="nc-PageStaking relative overflow-x-clip h-screen">
-          <div className="absolute  w-screen h-screen top-0 left-0">
+        <div className="nc-PageStaking relative h-screen">
+          <div className="absolute  w-screen h-screen top-0 left-0 overflow-x-hidden">
             <img className="absolute w-screen h-screen z-0" src={StakingBg} alt="" />
             <div className="absolute w-screen h-screen bg-[#33FF00] mix-blend-multiply z-0" />
             <div className={"absolute bg-[#33FF00] opacity-40 blur-[100px] w-[20vw] h-2/5 rounded-full -top-[100px] -left-[120px] z-0"}></div>
             <div className={"absolute bg-[#33FF00] opacity-40 blur-[100px] w-[20vw] h-2/5 rounded-full bottom-[0px] -right-[120px] z-0"}></div>
           </div>
         </div>
-        <div className='absolute w-full top-0'>
+        <div className='absolute w-full h-screen top-0 overflow-y-auto'>
           <SiteHeader />
+          
+          <div className='w-full'>
+            <div className='w-full p-8 overflow-auto'>
+              <Container className="bridge-container">
+                <SwapHeader />
+                <Container className="swap-body">
+                  <Box className="coin-type">
+                    <Box className="wave-anim">
+                      <WaveAnim />
+                    </Box>
+                    <ChainItem coinIdx={ startCoinIdx } handleChangeCoin={ handleChangeStart }/>
+                    <CustomButton isSwap={ true } handleAction={ handleSwap } />
+                    <ChainItem coinIdx={destCoinIdx} handleChangeCoin={ handleChangeDest }/>
+                  </Box>
+                  
+                  <Box className="amount-group">
+                    <InputAmount title={ "Enter Amount" } amount={ amount } coinIdx={ startCoinIdx } handleChangeCoin={ handleChangeStart } handleChangeAmount={ handleChangeAmount } />
+                    <InputAmount title={ "Received" } amount={ receivedAmount } exchangeNotice={ exchangeNotice } coinIdx={ destCoinIdx } handleChangeCoin={ handleChangeDest } readOnly={ true } />
+                  </Box>
+
+                  {/* <Box className="other-routes">
+                    <OtherRoutes />
+                  </Box> */}
+
+                  <CustomButton handleAction={ handleApprove } />
+                </Container>
+              </Container>
+            </div>
+          </div>
+          
         </div>
         
-        <div className='absolute inset-0 mt-20 flex items-center justify-center overflow-y-auto'>
-          <Container className="container">
-            <SwapHeader />
-            <Container className="swap-body">
-              <Box className="coin-type">
-                <Box className="wave-anim">
-                  <WaveAnim />
-                </Box>
-                <ChainItem coinIdx={ startCoinIdx } handleChangeCoin={ handleChangeStart }/>
-                <CustomButton isSwap={ true } handleAction={ handleSwap } />
-                <ChainItem coinIdx={destCoinIdx} handleChangeCoin={ handleChangeDest }/>
-              </Box>
-              
-              <Box className="amount-group">
-                <InputAmount title={ "Enter Amount" } amount={ amount } coinIdx={ startCoinIdx } handleChangeCoin={ handleChangeStart } handleChangeAmount={ handleChangeAmount } />
-                <InputAmount title={ "Received" } amount={ receivedAmount } exchangeNotice={ exchangeNotice } coinIdx={ destCoinIdx } handleChangeCoin={ handleChangeDest } readOnly={ true } />
-              </Box>
-
-              {/* <Box className="other-routes">
-                <OtherRoutes />
-              </Box> */}
-
-              <CustomButton handleAction={ handleApprove } />
-            </Container>
-          </Container>
-        </div>
-        
+     
       </Wrapper>
     </div>
 

@@ -4,26 +4,6 @@ import { Typography, IconButton, Container } from '@material-ui/core';
 export const Wrapper = styled(Container)`
   padding : 0;
 
-  /* Smartphones (portrait and landscape) ----------- */
-  @media only screen 
-  and (min-device-width : 320px) 
-  and (max-device-width : 480px) {
-  /* Styles */
-    .header-container {
-      border-radius: 0 !important;
-    }
-  }
-
-  /* iPhone 4 ----------- */
-  @media
-  only screen and (-webkit-min-device-pixel-ratio : 1.5),
-  only screen and (min-device-pixel-ratio : 1.5) {
-  /* Styles */
-    .header-container {
-      border-radius: 0 !important;
-    }
-  }
-
   .header-container { 
     width: 100%;
     height: 5.625rem;

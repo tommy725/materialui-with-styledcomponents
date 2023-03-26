@@ -33,6 +33,7 @@ const MainNav2Logged: FC<MainNav2LoggedProps> = () => {
             </div>
           </div>
         </div>
+        
         <div className="hidden lg:flex">
           <Popover className="relative">
             {({ open }) => (

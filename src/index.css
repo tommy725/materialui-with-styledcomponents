@@ -14,23 +14,14 @@ html {
   }
   
   @media only screen 
-  and (min-device-width : 320px) 
-  and (max-device-width : 480px) {
+  /* and (min-device-width : 320px)  */
+  and (max-device-width : 540px) {
   /* Styles */
     html {
       font-size: 10px;
     }
   }
   
-  /* iPhone 4 ----------- */
-  @media
-  only screen and (-webkit-min-device-pixel-ratio : 1.5),
-  only screen and (min-device-pixel-ratio : 1.5) {
-  /* Styles */
-    html {
-      font-size: 10px;
-    }
-  }
   
   .MuiTypography-body1 {
     font-size: 1.25rem;
