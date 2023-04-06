@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Container, Box } from '@material-ui/core';
+import { Container, Box, Input } from '@material-ui/core';
 import { Wrapper } from './styles.module';
 import StakingBg from "../../assets/images/stakingBg.png"
 
@@ -25,6 +25,7 @@ import {
   selectReceivedAmount,
   selectExchangeNotice,
   changeReceiveAmountAndNotice,
+  selectChainInfos,
 } from '../../redux/bridge';
 
 const Bridge = () => {
@@ -60,10 +61,21 @@ const Bridge = () => {
     dispatch(changeReceiveAmountAndNotice());
   };
 
-  const handleApprove = (event) => {
-    // useDispatch
-    // dispatch(approve())
+  const handleApprove = () => {
+    
   };
+
+  const chainInfo = useSelector(selectChainInfos);
+  const [address, setAddress] = useState('');
+
+  useEffect(() => {
+    if (chainInfo && chainInfo['cosmoshub-4']?.accounts.length > 0) {
+      setAddress(chainInfo['cosmoshub-4']?.accounts[0]?.address);
+    }
+    else {
+      setAddress('');
+    }
+  }, chainInfo);
 
   return (
     <div class="bg-white text-base dark:bg-[#181B18] text-neutral-900 dark:text-neutral-200">
@@ -94,8 +106,9 @@ const Bridge = () => {
                   </Box>
                   
                   <Box className="amount-group">
-                    <InputAmount title={ "Enter Amount" } amount={ amount } coinIdx={ startCoinIdx } handleChangeCoin={ handleChangeStart } handleChangeAmount={ handleChangeAmount } />
+                    <InputAmount title={ `Enter Amount (${address})` } amount={ amount } coinIdx={ startCoinIdx } handleChangeCoin={ handleChangeStart } handleChangeAmount={ handleChangeAmount } />
                     <InputAmount title={ "Received" } amount={ receivedAmount } exchangeNotice={ exchangeNotice } coinIdx={ destCoinIdx } handleChangeCoin={ handleChangeDest } readOnly={ true } />
+                    <Input />
                   </Box>
 
                   {/* <Box className="other-routes">

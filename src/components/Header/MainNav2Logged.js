@@ -1,24 +1,30 @@
-import { Fragment, FC, useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
 import Logo from "../Shared/Logo";
-// import Message from "../Shared/Message";
-// import MenuBar from "../Shared/MenuBar";
 import ButtonPrimary from "../Shared/Button/ButtonPrimary";
 import { Popover } from "@headlessui/react";
+import { useCosmosWallet } from "@use-web3wallet/cosmos";
 import { IoWalletOutline } from "react-icons/io5";
-// import AvatarDropdown from "./AvatarDropdown";
-// import axios from "axios";
-// import md5 from "md5";
-// import { config } from "app/config.js";
-// import { useNavigate } from "react-router-dom";
-// import { useAppDispatch, useAppSelector } from "app/hooks";
-// import { getShortAddress, isEmpty } from "app/methods";
 import Settings from "../Settings";
-// import NotifyDropdown from "./NotifyDropdown";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { changeChainInfos } from "../../redux/bridge";
 
-export interface MainNav2LoggedProps { }
+const MainNav2Logged = () => {
+  const {
+    connectTo,
+    disconnect,
+    isLoading,
+    isWalletConnected,
+    currentWallet,
+    provider,
+    chainInfos,
+  } = useCosmosWallet();
 
-const MainNav2Logged: FC<MainNav2LoggedProps> = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    localStorage.setItem("chainInfos", JSON.stringify(chainInfos));
+    dispatch(changeChainInfos(chainInfos))
+  }, [chainInfos])
 
   return (
     <div className={`font-['GRIFTER']  nc-MainNav2Logged relative z-10 ${"onTop "}`}>
@@ -33,14 +39,11 @@ const MainNav2Logged: FC<MainNav2LoggedProps> = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="hidden lg:flex">
           <Popover className="relative">
             {({ open }) => (
-              <div
-              // onMouseEnter={() => onHover(open, "onMouseEnter", 'Pages')}
-              // onMouseLeave={() => onHover(open, "onMouseLeave", 'Pages')}
-              >
+              <div>
                 <Popover.Button
                   // ref={pagesRef}
                   className={`${open ? "" : "text-opacity-90"} group py-3 px-6 hover:bg-gray-100 dark:hover:bg-neutral-800 rounded-full inline-flex items-center text-base font-medium hover:text-opacity-100 relative !outline-none`}
@@ -53,10 +56,7 @@ const MainNav2Logged: FC<MainNav2LoggedProps> = () => {
 
           <Popover className="relative">
             {({ open }) => (
-              <div
-              // onMouseEnter={() => onHover(open, "onMouseEnter", "Chains")}
-              // onMouseLeave={() => onHover(open, "onMouseLeave", "Chains")}
-              >
+              <div>
                 <Popover.Button
                   // ref={chainRef}
                   className={`${open ? "" : "text-opacity-90"} group py-3 px-6 hover:bg-gray-100 dark:hover:bg-neutral-800 rounded-full inline-flex items-center text-base font-medium hover:text-opacity-100 relative !outline-none`}
@@ -68,13 +68,38 @@ const MainNav2Logged: FC<MainNav2LoggedProps> = () => {
           </Popover>
           <Settings />
         </div>
-
-        <ButtonPrimary
-          sizeClass="px-4 py-2 sm:px-5"
-        >
-          <IoWalletOutline size={22} />
-          <span className="pl-2">Wallet connect</span>
-        </ButtonPrimary>
+        {!isLoading ?
+          isWalletConnected ? (
+            <ButtonPrimary
+              sizeClass="px-4 py-2 sm:px-5"
+              onClick={() => disconnect()}
+            >
+              <IoWalletOutline size={22} />
+              <span className="pl-2">
+                disconnect
+              </span>
+            </ButtonPrimary>
+          ) : (
+            <ButtonPrimary
+              sizeClass="px-4 py-2 sm:px-5"
+              onClick={() => connectTo("Keplr")}
+            >
+              <IoWalletOutline size={22} />
+              <span className="pl-2">
+                Wallet Connect
+              </span>
+            </ButtonPrimary>
+          )
+          :
+          <ButtonPrimary
+            sizeClass="px-4 py-2 sm:px-5"
+          >
+            <IoWalletOutline size={22} />
+            <span className="pl-2">
+              loading...
+            </span>
+          </ButtonPrimary>
+        }
       </div>
     </div>
   );

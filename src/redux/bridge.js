@@ -10,6 +10,7 @@ export const bridgeSlice = createSlice({
     amount: "",
     receivedAmount: 0,
     exchangeNotice: "1 XRP = 0.031521 Atom",
+    chainInfos: localStorage.getItem('chainInfos') || {},
     coinList: [
       {id: 1, name: 'XRP', image: XRPSvg},
       {id: 2, name: 'Atom', image: AtomSvg},
@@ -46,6 +47,10 @@ export const bridgeSlice = createSlice({
       state.amount = action.payload;
     },
 
+    changeChainInfos: (state, action) => {
+      state.chainInfos = action.payload;
+    },
+
     changeReceiveAmountAndNotice:(state) => {
       // Calculate received amount.
       // startCoinIdx
@@ -72,26 +77,14 @@ export const bridgeSlice = createSlice({
   },
 });
 
-export const { swap, changeStart, changeDest, changeAmount, changeReceiveAmountAndNotice } = bridgeSlice.actions;
+export const { swap, changeStart, changeDest, changeAmount, changeReceiveAmountAndNotice, changeChainInfos } = bridgeSlice.actions;
 
-// The function below is called a thunk and allows us to perform async logic. It
-// can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This
-// will call the thunk with the `dispatch` function as the first argument. Async
-// code can then be executed and other actions can be dispatched
-export const swapAsync = () => (dispatch) => {
-  setTimeout(() => {
-    dispatch(swap());
-  }, 1000);
-};
-
-// The function below is called a selector and allows us to select a value from
-// the state. Selectors can also be defined inline where they're used instead of
-// in the slice file. For example: `useSelector((state) => state.counter.value)`
 export const selectStartCoinIdx = (state) => state.bridge.startCoinIdx;
 export const selectDestCoinIdx = (state) => state.bridge.destCoinIdx;
 export const selectCoinList = (state) => state.bridge.coinList;
 export const selectAmount = (state) => state.bridge.amount;
 export const selectReceivedAmount = (state) => state.bridge.receivedAmount;
 export const selectExchangeNotice = (state) => state.bridge.exchangeNotice;
+export const selectChainInfos = (state) => state.bridge.chainInfos;
 
 export default bridgeSlice.reducer;

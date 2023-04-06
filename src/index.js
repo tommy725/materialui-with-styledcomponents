@@ -12,6 +12,14 @@ import App from './App';
 import theme from './config/theme';
 import store from './config/store';
 import * as serviceWorker from './config/serviceWorker';
+import { CosmosProvider } from "@use-web3wallet/cosmos";
+
+const walletOptions = {
+  "Keplr": {
+    // supportedChainIds: ["cosmoshub-4", "juno-1", "osmosis-1"]
+    supportedChainIds: ["cosmoshub-4"]
+  }
+};
 
 ReactDOM.render(
   <React.StrictMode>
@@ -20,7 +28,9 @@ ReactDOM.render(
         <ThemeProvider theme={theme}>
           <Provider store={store}>
             <CssBaseline />
-            <App />
+            <CosmosProvider walletOptions={walletOptions}>
+              <App />
+            </CosmosProvider>
           </Provider>
         </ThemeProvider>
       </MuiThemeProvider>
