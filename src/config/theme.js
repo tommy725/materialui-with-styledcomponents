@@ -5,8 +5,8 @@ import "../assets/fonts/grifterbold.otf";
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#0079C1',
-      light: '#6EB1D9',
+      main: '#101310',
+      light: '#101310',
       dark: '#3A4647',
     },
     secondary: {

@@ -1,25 +1,9 @@
-import React, { ButtonHTMLAttributes, FC } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 // import { LocationStates } from "routers/types";
 import twFocusClass from "../../../utils/twFocusClass";
 
-export interface ButtonProps {
-  className?: string;
-  translate?: string;
-  sizeClass?: string;
-  fontSize?: string;
-  //
-  loading?: boolean;
-  disabled?: boolean;
-  type?: ButtonHTMLAttributes<HTMLButtonElement>["type"];
-  // href?: keyof LocationStates | "#" | LinkProps["to"];
-  // href?: keyof LocationStates;
-  targetBlank?: boolean;
-  onClick?: () => void;
-  children?: React.ReactNode;
-}
-
-const Button: FC<ButtonProps> = ({
+const Button = ({
   className = "text-neutral-700 dark:text-neutral-200",
   translate = "",
   sizeClass = "px-4 py-3 sm:px-6",
@@ -39,7 +23,7 @@ const Button: FC<ButtonProps> = ({
   const _renderLoading = () => {
     return (
       <svg
-        className="animate-spin -ml-1 mr-3 h-5 w-5"
+        className="w-5 h-5 mr-3 -ml-1 animate-spin"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"

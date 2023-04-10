@@ -6,8 +6,7 @@ export const ButtonWrapper = styled(Box)`
   .MuiButton-root {
     width: 100%;
     height: 3.75rem;
-    background: #2FED00;
-    border: 0.0625rem solid #46FF18;
+    background: #33FF00;
     border-radius: 0.375rem;
     color: #181B18;
     font-size: 1.25rem;

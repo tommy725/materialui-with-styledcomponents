@@ -11,15 +11,14 @@ const CustomButton = (props) => {
     handleAction,
   } = props;
 
-  return ( 
-    <ButtonWrapper sx={{margin: isSwap ? '0 2.4rem' : "3.2rem 0 0 0"}}>
-      <Button 
-        className={isSwap ? "swap" : "approve"} 
-        focusRipple 
-        startIcon={isSwap ? <SwapSvg/> : <CardTickSvg/>}
+  return (
+    <ButtonWrapper sx={{ py: '40px', px: '55px', pb: '70px' }}>
+      <Button
+        focusRipple
+        startIcon={<CardTickSvg />}
         onClick={() => handleAction()}
       >
-        {isSwap ? "" : "Send"}
+        Approve
       </Button>
     </ButtonWrapper>
   )

@@ -3,13 +3,7 @@ import { Link } from "react-router-dom";
 import logoImg from "../../assets/images/logo.png";
 import logoLightImg from "../../assets/images/logo-light.png";
 
-export interface LogoProps {
-  img?: string;
-  imgLight?: string;
-  className?: string;
-}
-
-const Logo: React.FC<LogoProps> = ({
+const Logo = ({
   img = logoImg,
   imgLight = logoLightImg,
   className = "",

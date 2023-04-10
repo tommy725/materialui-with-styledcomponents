@@ -1,4 +1,4 @@
-import { Box } from "@material-ui/core";
+import { Box, Typography } from "@material-ui/core";
 import styled from "styled-components";
 
 import ArrowDownWhiteSvg from "../../assets/images/arrow-down-white.svg"
@@ -8,12 +8,11 @@ export const Wrapper = styled(Box)`
   padding: 0;
 
   .MuiFormControl-root {
-    width: 100%;
     height: ${({ theme }) => theme.size.button.height};
 
     .MuiInput-formControl {
       height: ${({ theme }) => theme.size.button.height};
-      border: 0.0625rem solid white;
+      border: 0.0625rem solid #555555;
       border-radius: 0.625rem;
 
       ::before, ::after {
@@ -70,4 +69,12 @@ export const Wrapper = styled(Box)`
       }
     }
   }
+`;
+
+export const Label = styled(Typography)`
+  color: #828282;
+  font-size: 20px;
+  left: 5px;
+  position: absolute;
+  top: -30px;
 `;

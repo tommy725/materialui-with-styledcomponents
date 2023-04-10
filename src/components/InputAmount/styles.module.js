@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const Wrapper = styled(Container)`
   padding: 0;
   margin-top: 1.875rem;
-
+    
   .title {
     color: white;
     font-size: 1rem;
@@ -16,11 +16,12 @@ export const Wrapper = styled(Container)`
     height: ${({ theme }) => theme.size.button.height};
     display: flex;
     margin-top: 0.875rem;
+    position: relative;
 
     .amount {
       width: 100%;
       background: transparent;
-      border: 0.0625rem solid white;
+      border: 0.0625rem solid #555555;
       border-right: none;
       border-bottom-left-radius: 0.625rem;
       border-top-left-radius: 0.625rem;
@@ -29,15 +30,20 @@ export const Wrapper = styled(Container)`
       font-size: 1.25rem;
       letter-spacing: ${({ theme }) => theme.typography.letterSpacing};
       padding: 0 1.25rem;
+
+      &:focus {
+        box-shadow: none;
+        outline: none;
+        border-color: #33FF0080;
+      }
     }
 
     .coin-select {
-        width: 15rem;
-        min-width: 15rem;
-        border-bottom-right-radius: 0.625rem;
-        border-top-right-radius: 0.625rem;
-        border: 0.0625rem solid #33FF00;
-      }
+      border-bottom-right-radius: 0.625rem;
+      border-top-right-radius: 0.625rem;
+      border: 0.0625rem solid #33FF0040;
+      color: #33FF00;
+    }
   }
 
   .sub-title {

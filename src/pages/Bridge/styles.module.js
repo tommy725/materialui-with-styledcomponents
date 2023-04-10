@@ -24,7 +24,6 @@ export const Wrapper = styled(Container)`
     max-width: 49.25rem;
     width: 60%;
     min-width: 33.75rem;
-    height: fit-content;
     background-color: #313631;
     border-radius: 1.875rem;
     padding-left: 0;
